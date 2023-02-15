@@ -18,5 +18,33 @@
   - podemos utilizar o auto-scaling para efetuar o provisionamento com base em uma quantidade mínima e máxima
   - ele controla esse ponto, com base no número de solicitações abertas
 
-### continuacao
-- https://docs.aws.amazon.com/pt_br/lambda/latest/dg/gettingstarted-package.html
+### Criação de uma lambda via cli
+```
+aws lambda create-function --function-name my-function \
+--zip-file fileb://function.zip --handler index.handler --runtime nodejs16.x \
+--role arn:aws:iam::763114715754:role/lambda-ex
+```
+- invocando o lambda via cli
+```
+aws lambda invoke --function-name my-function out --log-type Tail
+```
+- para atualizar um lambda
+```
+aws lambda update-function-configuration \
+--function-name my-function \
+--memory-size 256
+```
+- para excluir
+```
+aws lambda delete-function --function-name my-function
+```
+
+### Permissões
+- lambda coloca na requisições, além das credenciais (token gerado pela role vinculada a ela), sua arn
+- desta forma podemos identificar, qual lambda chamou nosso recurso, através do lambda:SourceFunctionArn
+
+#### Chaves
+- A chave de condição lambda:SourceFunctionArn é diferente das chaves de condição lambda:FunctionArn e aws:SourceArn. 
+- A chave de condição lambda:FunctionArn aplica-se somente a mapeamentos de fontes de eventos e ajuda a definir quais funções a sua fonte de evento pode invocar. 
+- A chave de condição aws:SourceArn se aplica apenas a políticas nas quais a função do Lambda é o recurso visado e ajuda a definir quais outros serviços e recursos da AWS podem invocar essa função. 
+- A chave de condição lambda:SourceFunctionArn pode ser aplicada a qualquer política baseada em identidade ou SCP para definir as funções específicas do Lambda que têm permissões para fazer determinadas chamadas de API da AWS para outros recursos.
