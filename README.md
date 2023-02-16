@@ -48,3 +48,6 @@ aws lambda delete-function --function-name my-function
 - A chave de condição lambda:FunctionArn aplica-se somente a mapeamentos de fontes de eventos e ajuda a definir quais funções a sua fonte de evento pode invocar. 
 - A chave de condição aws:SourceArn se aplica apenas a políticas nas quais a função do Lambda é o recurso visado e ajuda a definir quais outros serviços e recursos da AWS podem invocar essa função. 
 - A chave de condição lambda:SourceFunctionArn pode ser aplicada a qualquer política baseada em identidade ou SCP para definir as funções específicas do Lambda que têm permissões para fazer determinadas chamadas de API da AWS para outros recursos.
+
+#### continuar
+https://docs.aws.amazon.com/pt_br/lambda/latest/dg/access-control-identity-based.html
