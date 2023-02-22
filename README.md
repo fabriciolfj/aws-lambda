@@ -55,3 +55,6 @@ aws lambda delete-function --function-name my-function
 docker run -p 9090:8080 hello-world
 curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
 ```
+
+#### continuar
+-https://docs.aws.amazon.com/pt_br/lambda/latest/dg/lambda-managing.html
