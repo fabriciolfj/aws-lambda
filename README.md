@@ -57,4 +57,4 @@ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d
 ```
 
 #### continuar
--https://docs.aws.amazon.com/pt_br/lambda/latest/dg/lambda-managing.html
+-https://docs.aws.amazon.com/pt_br/lambda/latest/dg/configuration-vpc.html
