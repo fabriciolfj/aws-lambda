@@ -56,5 +56,17 @@ docker run -p 9090:8080 hello-world
 curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
 ```
 
+### Codigo em java
+- um repositorio git com vários exemplos: https://github.com/awsdocs/aws-lambda-developer-guide/tree/main/sample-apps
+- temos como lib principais:
+```
+com.amazonaws:aws-lambda-java-core (obrigatória): define as interfaces do método do manipulador e o objeto de contexto que o tempo de execução transmite ao manipulador. Se você definir seus próprios tipos de entrada, esta será a única biblioteca necessária.
+
+com.amazonaws:aws-lambda-java-events: tipos de entrada para eventos de serviços que invocam funções do Lambda.
+
+com.amazonaws:aws-lambda-java-log4j2: uma biblioteca appender do Apache Log4j 2 que você pode usar para adicionar o ID de solicitação da invocação atual aos logs de função.
+```
+
 #### continuar
--https://docs.aws.amazon.com/pt_br/lambda/latest/dg/configuration-vpc.html
+-implantar via terraform
+-https://docs.aws.amazon.com/pt_br/lambda/latest/dg/java-image.html
