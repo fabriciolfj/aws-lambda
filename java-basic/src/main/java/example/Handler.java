@@ -7,15 +7,14 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import java.util.Map;
 
 // Handler value: example.Handler
-public class Handler implements RequestHandler<Map<String,String>, String>{
+public class Handler implements RequestHandler<Map<String, String>, String> {
 
-  @Override
-  public String handleRequest(Map<String,String> event, Context context)
-  {
-    LambdaLogger logger = context.getLogger();
-    logger.log("ENVIRONMENT VARIABLES: " + System.getenv());
-    logger.log("EVENT: " + event);
-    logger.log("EVENT TYPE: " + event.getClass());
-    return "200 ok";
-  }
+    @Override
+    public String handleRequest(Map<String, String> event, Context context) {
+        LambdaLogger logger = context.getLogger();
+        logger.log("ENVIRONMENT VARIABLES: " + System.getenv());
+        logger.log("EVENT: " + event);
+        logger.log("EVENT TYPE: " + event.getClass());
+        return "200 ok";
+    }
 }
