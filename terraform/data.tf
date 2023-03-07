@@ -1,12 +1,12 @@
 data aws_caller_identity current {}
 
-data aws_ecr_image lambda_image {
-  depends_on = [
-    null_resource.ecr_image
-  ]
-  repository_name = local.ecr_repository_name
-  image_tag       = local.ecr_image_tag
-}
+#data aws_ecr_image lambda_image {
+#  depends_on = [
+#    null_resource.ecr_image
+#  ]
+##  repository_name = local.ecr_repository_name
+#  image_tag       = local.ecr_image_tag
+#}
 
 data aws_iam_policy_document lambda {
   statement {

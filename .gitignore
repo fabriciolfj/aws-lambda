@@ -1,0 +1,8 @@
+
+.idea/
+
+java-basic/.gradle/
+java-basic/.idea/
+java-basic/target
+
+terraform/.terraform
