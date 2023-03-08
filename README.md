@@ -67,6 +67,18 @@ com.amazonaws:aws-lambda-java-events: tipos de entrada para eventos de serviços
 com.amazonaws:aws-lambda-java-log4j2: uma biblioteca appender do Apache Log4j 2 que você pode usar para adicionar o ID de solicitação da invocação atual aos logs de função.
 ```
 
-#### continuar
--implantar via terraform
--https://docs.aws.amazon.com/pt_br/lambda/latest/dg/java-image.html
+#### python
+- precisa baixar as dependencias
+```
+pip install --target ./package requests
+```
+- zip as mesmas
+```
+cd package
+zip -r ../my-deployment-package.zip .
+```
+- incluir a função dentro do zip que possui as depenencias
+```
+cd ..
+zip my-deployment-package.zip lambda_function.py
+```
