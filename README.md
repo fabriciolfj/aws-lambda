@@ -82,3 +82,5 @@ zip -r ../my-deployment-package.zip .
 cd ..
 zip my-deployment-package.zip lambda_function.py
 ```
+
+### https://docs.aws.amazon.com/pt_br/lambda/latest/dg/lambda-services.html
